@@ -1,0 +1,76 @@
+/* App.css - Dark Theme Foundation */
+:root {
+  /* Color Palette based on Landing Page */
+  --bg-dark: #0b1120;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
+  --border-light: rgba(255, 255, 255, 0.1);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  
+  /* Accents */
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-success: #10b981;
+  --accent-danger: #ef4444;
+  --accent-warning: #f59e0b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  background-color: var(--bg-dark);
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Global Logo Style - We will use this in the headers! */
+.global-svg-logo {
+  color: #60a5fa;
+  filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));
+}
+/* Ambient Glowing Orbs (Global) */
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.2; /* Slightly dimmer for internal pages so it doesn't distract */
+  pointer-events: none; /* Prevents them from blocking clicks */
+}
+
+.glow-circle.top-left {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-primary);
+  top: -100px;
+  left: -100px;
+}
+
+.glow-circle.bottom-right {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-success);
+  bottom: -200px;
+  right: -100px;
+}

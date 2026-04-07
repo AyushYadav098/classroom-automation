@@ -1,0 +1,14 @@
+.search-lectures-container { padding: 20px; min-height: 100vh; position: relative;}
+.search-lectures-box { max-width: 800px; margin: 0 auto; }
+
+.search-form, .search-loading {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.button-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
+.results-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: var(--text-main); }

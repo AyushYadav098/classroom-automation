@@ -1,0 +1,69 @@
+.student-attendance-container { padding: 20px; min-height: 100vh; position: relative;}
+
+.student-attendance-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.lecture-info { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light); }
+.lecture-info h1 { font-size: 28px; color: var(--text-main); margin: 0 0 20px 0; }
+
+.info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.info-row:last-child { border-bottom: none; }
+.label { font-weight: 600; color: var(--text-muted); font-size: 14px; }
+.value { color: var(--text-main); font-size: 14px; }
+
+.marked-status, .mark-attendance-section { text-align: center; padding: 40px 20px; }
+.marked-status h2, .mark-attendance-section h2 { color: var(--text-main); font-size: 24px; margin-bottom: 15px;}
+.marked-status p, .instruction { color: var(--text-muted); font-size: 16px; }
+
+.bluetooth-instructions, .password-instructions {
+  display: flex; gap: 20px;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 20px; border-radius: 10px;
+  border-left: 4px solid var(--accent-primary);
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.instruction-title { color: var(--text-main); font-weight: 600; margin: 0 0 8px 0; }
+.instruction-description { color: var(--text-muted); margin: 0; font-size: 14px;}
+
+.bluetooth-scan-box, .password-form {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 30px; border-radius: 10px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.bluetooth-error {
+  margin-top: 20px; padding: 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 8px; border: 1px solid var(--accent-danger);
+}
+.error-message { color: #f87171; font-weight: bold;}
+
+.bluetooth-help {
+  margin-top: 25px; padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px; text-align: left; color: var(--text-muted);
+}
+
+.verification-success, .all-verified {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px; margin-bottom: 20px; border-radius: 8px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--accent-success);
+}
+
+.success-message, .verified-item { color: #34d399; font-weight: 600; margin: 0;}
+.success-icon-small { 
+  background: var(--accent-success); color: white; 
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}

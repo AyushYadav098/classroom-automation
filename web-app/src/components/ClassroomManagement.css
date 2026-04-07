@@ -1,0 +1,112 @@
+.classroom-management {
+  margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Form Styles */
+.add-classroom-form {
+  padding: 24px;
+  margin-bottom: 30px;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.add-classroom-form h3 {
+  margin: 0 0 20px 0;
+  color: var(--text-main);
+}
+
+.classroom-grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* Grid & Cards */
+.classrooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.classroom-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.classroom-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.room-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent-primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.card-body p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-body span {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.iot-details {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iot-details p {
+  margin: 4px 0;
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: var(--accent-secondary);
+}
+
+.card-actions {
+  margin-top: auto;
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}

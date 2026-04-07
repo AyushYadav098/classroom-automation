@@ -1,0 +1,97 @@
+.take-attendance-container { padding: 20px; min-height: 100vh; position: relative;}
+
+.attendance-header { max-width: 1400px; margin: 0 auto 20px; display: flex; align-items: center; gap: 20px; }
+.attendance-header h1 { font-size: 28px; color: var(--text-main); margin: 0; }
+
+.attendance-stats {
+  max-width: 1400px; margin: 0 auto 30px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border-left: 4px solid var(--accent-primary);
+  backdrop-filter: blur(10px);
+}
+
+.stat-card h3 { margin: 0 0 10px 0; font-size: 14px; color: var(--text-muted); text-transform: uppercase; }
+.stat-number { margin: 0; font-size: 36px; font-weight: bold; color: var(--text-main); }
+
+.stat-present { border-left-color: var(--accent-success); }
+.stat-present .stat-number { color: var(--accent-success); }
+.stat-absent { border-left-color: var(--accent-danger); }
+.stat-absent .stat-number { color: var(--accent-danger); }
+
+.password-display-box {
+  max-width: 1400px; margin: 0 auto 30px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.password-content {
+  display: flex; align-items: center; gap: 25px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.password-code {
+  font-size: 42px; font-weight: bold; color: var(--text-main);
+  font-family: 'Courier New', monospace; letter-spacing: 8px; margin: 0 0 8px 0;
+}
+
+.password-display-scanning {
+  background: var(--bg-card);
+  padding: 20px; border-radius: 10px; margin: 20px 0;
+  border: 2px dashed var(--accent-primary);
+}
+.password-display-scanning .password-code { color: var(--accent-primary); }
+
+.attendance-lists { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.present-list, .absent-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);
+}
+
+.present-list h2 { color: var(--accent-success); font-size: 20px; border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin-bottom: 20px;}
+.absent-list h2 { color: var(--accent-danger); font-size: 20px; border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin-bottom: 20px;}
+
+.attendance-table { width: 100%; border-collapse: collapse; }
+.attendance-table th { padding: 12px; text-align: left; font-size: 13px; color: var(--text-muted); border-bottom: 1px solid var(--border-light); }
+.attendance-table td { padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); font-size: 14px; }
+.attendance-table tbody tr:hover { background: var(--bg-card-hover); }
+.attendance-actions {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* This physically centers the buttons in the middle */
+  padding: 0 20px;
+}
+
+/* Ensure both buttons stay the same size and look proportional */
+.attendance-actions > button, 
+.attendance-actions > .custom-btn {
+  flex: 1;
+  max-width: 280px; /* Limits width so they don't look stretched on ultra-wide screens */
+}
+
+/* Stack them vertically on mobile for better usability */
+@media (max-width: 768px) {
+  .attendance-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .attendance-actions > button {
+    max-width: 100%;
+  }
+}
