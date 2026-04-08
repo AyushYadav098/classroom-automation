@@ -201,7 +201,22 @@ const AdminDashboard = () => {
                         <td><strong>{lec.subject}</strong></td>
                         <td>{lec.teacher?.name || 'Unknown'}</td>
                         <td>{lec.classroom?.name || 'Unassigned'} ({lec.classroom?.roomNumber || 'N/A'})</td>
-                        <td>{new Date(lec.date).toLocaleDateString()} @ {lec.startTime}<br/><small>{lec.duration} mins</small></td>
+                        <td>
+  {new Date(lec.startTime).toLocaleDateString('en-IN', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  })}
+  <br />
+  <small style={{ color: '#aaa' }}>
+    {new Date(lec.startTime).toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    })}
+    ({lec.duration} mins)
+  </small>
+</td>
                         <td style={{ display: 'flex', gap: '10px' }}>
                          {/* 👉 Updated Button */}
                           <Button variant="warning" onClick={() => handleCutPower(lec._id)} style={{ padding: '6px 10px', fontSize: '12px' }}>

@@ -297,6 +297,21 @@ exports.downloadAttendancePDF = async (req, res) => {
 
     doc.pipe(res);
 
+    // --- DATE FORMATTING HELPER ---
+    const formatDate = (date) => {
+      const d = new Date(date);
+      return `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
+    };
+
+    const formatTime = (date) => {
+      return new Date(date).toLocaleTimeString('en-IN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Asia/Kolkata' // Forces IST
+      });
+    };
+
     // Title
     doc.fontSize(20).text('Attendance Report', { align: 'center' });
     doc.moveDown();
@@ -306,7 +321,8 @@ exports.downloadAttendancePDF = async (req, res) => {
     doc.text(`Subject: ${lecture.subject}`);
     doc.text(`Classroom: ${lecture.classroom.name} (${lecture.classroom.roomNumber})`);
     doc.text(`Teacher: ${lecture.teacher.name}`);
-    doc.text(`Date: ${new Date(lecture.startTime).toLocaleString()}`);
+    doc.text(`Date: ${formatDate(lecture.startTime)}`); // Now in DD-MM-YYYY
+    doc.text(`Lecture Start Time: ${formatTime(lecture.startTime)}`); // Now in IST
     doc.text(`Duration: ${lecture.duration} minutes`);
     doc.moveDown();
 
@@ -347,7 +363,7 @@ exports.downloadAttendancePDF = async (req, res) => {
       doc.text(index + 1, col1, y);
       doc.text(record.student.rollNumber, col2, y);
       doc.text(record.student.name, col3, y);
-      doc.text(new Date(record.markedAt).toLocaleTimeString(), col4, y);
+      doc.text(formatTime(record.markedAt), col4, y); // Student mark time in IST
       doc.moveDown(0.5);
     });
 
@@ -375,7 +391,7 @@ exports.downloadAttendancePDF = async (req, res) => {
 
     // Footer
     doc.fontSize(8).text(
-      `Generated on: ${new Date().toLocaleString()}`,
+      `Generated on: ${formatDate(new Date())} at ${formatTime(new Date())}`,
       50,
       doc.page.height - 50,
       { align: 'center' }
